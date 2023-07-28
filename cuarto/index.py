@@ -7,11 +7,11 @@ def contactos():
     return render_template('./base/index.html')
 
 @app.route("/lista_contactos")
-def acerca():
+def listar():
     return render_template("./acerca/index.html")
 
-@app.route("/agregar_contactos", methods=['GET', 'POST'])
-def crear_mensaje():
+@app.route("/agregar_contacto", methods=['GET', 'POST'])
+def agregar():
     print(request.method)
     if request.method == 'POST':
         titulo = request.form['titulo']
@@ -27,7 +27,7 @@ def crear_mensaje():
     return render_template("./crear_mensajes/index.html")
 
 @app.route("/contacto")
-def mensajes():
+def ver():
     return render_template("./contacto/index.html")
 
 if __name__ == '__main__':

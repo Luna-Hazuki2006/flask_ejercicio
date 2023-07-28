@@ -9,9 +9,33 @@
             background-color: lavenderblush;
             font-family: monospace;
         }
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        div {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
     <h1>¡Bienvenido a tus contactos!</h1>
+    <p>
+        En esta página podrás guardar toda la información que necesites sobre tus contactos
+    </p>
+    <div>
+        <a href="{{ url_for('agregar') }}">
+            <button type="button">Agregar un contacto</button>
+        </a>
+        <a href="{{ url_for('listar') }}">
+            <button type="button">Ver lista de contactos</button>
+        </a>
+    </div>
 </body>
 </html>
