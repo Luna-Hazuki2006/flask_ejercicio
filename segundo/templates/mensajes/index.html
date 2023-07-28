@@ -1,0 +1,9 @@
+{% extends './base/index.html' %}
+{% block content %}
+<h1>{% block title %}Mis mensajes{% endblock %}</h1>
+<ul>
+    {% for mensaje in mensajes %}
+    <li>{{ mensaje['titulo'] }}: {{ mensaje['contenido'] }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

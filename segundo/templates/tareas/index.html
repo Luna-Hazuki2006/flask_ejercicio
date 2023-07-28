@@ -1,0 +1,11 @@
+{% extends './base/index.html' %}
+
+{% block content %}
+
+<h1>{% block title %}Mi lista de tareas{% endblock %}</h1>
+<ul>
+    {% for element in tareas %}
+    <li>{{ element }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

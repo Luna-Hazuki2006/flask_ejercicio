@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        p {
+            color: black;
+            background-color: antiquewhite;
+        }
+        body {
+            background-color: lavender;
+            text-align: center;
+            /* display: flex;
+            justify-content: center; */
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('tareas') }}">Mis tareas</a>
+        <a href="{{ url_for('acerca') }}">Acerca de mí</a>
+        <a href="{{ url_for('crear_mensaje') }}">Dejar un mensaje</a>
+        <a href="{{ url_for('mensajes') }}">Ver mensajes</a>
+    </nav>
+    {% for mensaje in get_flashed_messages() %}
+    <p style="color: red;">{{ mensaje }}</p>
+    {% endfor %}
+    {% block content %} {% endblock %}
+</body>
+</html>

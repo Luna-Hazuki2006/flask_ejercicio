@@ -1,0 +1,23 @@
+{% extends './base/index.html' %}
+{% block content %}
+<h1></h1>
+<form method="post">
+    <label for="titulo">Título del mensaje</label><br>
+    <input 
+        type="text"
+        name="titulo"
+        id="titulo"
+        placeholder="Título del mensaje"
+        value="{{ request.form['titulo'] }}"
+    ><br>
+    <label for="contenido">Contenido del mensaje</label><br>
+    <textarea 
+        name="contenido" 
+        id="contenido" 
+        cols="15" 
+        rows="20"
+        placeholder="Contenido del mensaje"
+        >{{ request.form['contenido'] }}</textarea><br>
+    <button type="submit">Enviar</button>
+</form>
+{% endblock %}

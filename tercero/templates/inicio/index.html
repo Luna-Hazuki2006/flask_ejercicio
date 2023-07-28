@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('personales') }}">Datos personales</a>
+        <a href="{{ url_for('laburar') }}">Experiencia laboral</a>
+        <a href="{{ url_for('educacion') }}">Educación</a>
+        <a href="{{ url_for('habilidades') }}">Habilidades</a>
+    </nav>
+    {% block content %} {% endblock %}
+</body>
+</html>
