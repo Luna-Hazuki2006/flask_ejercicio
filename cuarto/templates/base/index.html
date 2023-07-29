@@ -37,5 +37,9 @@
             <button type="button">Ver lista de contactos</button>
         </a>
     </div>
+    {% for mensaje in get_flashed_messages() %}
+    <p style="color: red;">{{ mensaje }}</p>
+    {% endfor %}
+    {% block content %} {% endblock %}
 </body>
 </html>

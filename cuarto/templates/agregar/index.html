@@ -1,5 +1,46 @@
 {% extends './base/index.html' %}
-
 {% block content %}
+<h1></h1>
 
-{% endblock &}
+<form method="post">
+    <label for="nombre">Nombre: </label>
+    <input 
+        type="text"
+        name="nombre"
+        id="nombre"
+        placeholder="Ana Paula"
+        value="{{ request.form['nombre'] }}"
+    ><br><br>
+    <label for="apellido">Apellidos: </label>
+    <input 
+        type="text" 
+        name="apellido" 
+        id="apellido"
+        placeholder="Mendoza Díaz"
+        value="{{ request.form['apellido'] }}"
+    ><br><br>
+    <label for="telefono">Teléfono: </label>
+    <input 
+        type="tel" 
+        name="telefono" 
+        id="telefono"
+        value="{{ request.form['telefono'] }}"
+    ><br><br>
+    <label for="correo">Correo: </label>
+    <input 
+        type="email" 
+        name="correo" 
+        id="correo"
+        value="{{ request.form['correo'] }}"
+    ><br><br>
+    <label for="direccion">Dirección: </label>
+    <input 
+        type="text"
+        name="direccion"
+        id="direccion"
+        value="{{ request.form['direccion'] }}"
+    ><br><br>
+    <button type="submit">Guardar</button>
+</form>
+
+{% endblock %}

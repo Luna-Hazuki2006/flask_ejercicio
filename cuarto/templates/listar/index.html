@@ -1,5 +1,9 @@
 {% extends './base/index.html' %}
-
 {% block content %}
-
+<h1>{% block title %}Lista de contactos{% endblock %}</h1>
+<ul>
+    {% for contacto in lista_contactos %}
+    <li>{{ contacto['nombre'] }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
