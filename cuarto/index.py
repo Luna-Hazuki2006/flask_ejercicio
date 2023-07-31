@@ -3,7 +3,7 @@ from flask import Flask, request, render_template, redirect,  url_for, flash
 app = Flask(__name__, template_folder="templates")
 app.config['SECRET_KEY'] = '2x^.dcT-ZgUtB:7%@5.y'
 
-@app.route("/contactos")
+@app.route("/")
 def contactos():
     return render_template('./base/index.html')
 
@@ -44,9 +44,14 @@ def agregar():
             return redirect(url_for('listar'))
     return render_template("./agregar/index.html")
 
-@app.route("/contacto")
-def ver():
-    return render_template("./contacto/index.html")
+@app.route("/contacto/<int:id>", methods=['GET'])
+def ver(id):
+    contacto = {}
+    for esto in lista_contactos:
+        if esto['id'] == id:
+            contacto = esto
+            break
+    return render_template("./contacto/index.html", contacto=contacto)
 
 if __name__ == '__main__':
     app.run(debug=True)
