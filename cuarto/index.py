@@ -11,7 +11,7 @@ lista_contactos = []
 
 @app.route("/lista_contactos")
 def listar():
-    return render_template("./listar/index.html")
+    return render_template("./listar/index.html", lista_contactos=lista_contactos)
 
 @app.route("/agregar_contacto", methods=['GET', 'POST'])
 def agregar():
