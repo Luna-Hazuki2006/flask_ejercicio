@@ -35,7 +35,8 @@ def agregar():
             flash('La dirección obligatoria')
 
         if nombre and apellido and telefono and correo and direccion:
-            lista_contactos.append({
+            id = len(lista_contactos) + 1
+            lista_contactos.append({'id': id, 
                 'nombre': nombre, 'apellido': apellido, 
                 'telefono': telefono, 'correo': correo, 
                 'direccion': direccion})
