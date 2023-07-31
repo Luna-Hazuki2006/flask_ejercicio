@@ -1,22 +1,28 @@
 {% extends './base/index.html' %}
 {% block content %}
 <h1>{% block title %}Lista de contactos{% endblock %}</h1>
-<table>
-    <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Teléfono</th>
-        <th>Correo</th>
-        <th>Dirección</th>
-    </tr>
-    {% for esto in lista_contactos %}
-    <tr>
-        <td>{{ esto['nombre'] }}</td>
-        <td>{{ esto['apellido'] }}</td>
-        <td>{{ esto['telefono'] }}</td>
-        <td>{{ esto['correo'] }}</td>
-        <td>{{ esto['direccion'] }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<form method="post">
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Dirección</th>
+            <th>Ver</th>
+        </tr>
+        {% for esto in lista_contactos %}
+        <tr>
+            <td>{{ esto['nombre'] }}</td>
+            <td>{{ esto['apellido'] }}</td>
+            <td>{{ esto['telefono'] }}</td>
+            <td>{{ esto['correo'] }}</td>
+            <td>{{ esto['direccion'] }}</td>
+            <td>
+                <button type="submit"></button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
 {% endblock %}
